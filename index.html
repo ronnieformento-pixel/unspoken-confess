@@ -3,157 +3,101 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#6f3fa8">
+<meta name="theme-color" content="#6f3f91">
 <title>Unspoken Confess 💜</title>
 <style>
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0; min-height:100vh; font-family:Georgia,"Times New Roman",serif;
-  color:#33233d; background:
-  radial-gradient(circle at 15% 10%,#ead9ff 0 12%,transparent 30%),
-  radial-gradient(circle at 90% 20%,#f4d9f0 0 10%,transparent 28%),
-  linear-gradient(135deg,#f9f4ff,#eee2fa 48%,#f8eef9);
-}
-.page{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
-.card{
-  width:min(760px,100%); position:relative; overflow:hidden; border-radius:28px;
-  background:rgba(255,255,255,.88); box-shadow:0 20px 70px rgba(75,35,100,.18);
-  border:1px solid rgba(124,78,161,.18);
-}
-.cover{
-  min-height:650px; display:flex; flex-direction:column; align-items:center; justify-content:center;
-  text-align:center; padding:48px 28px; color:#fff;
-  background:
-    radial-gradient(circle at 50% 10%,rgba(255,255,255,.18),transparent 28%),
-    linear-gradient(145deg,#241433,#4d276e 50%,#8b59b4);
-}
-.cover h1{font-size:clamp(40px,9vw,76px);letter-spacing:8px;margin:10px 0 0;font-weight:500}
-.cover .sub{font-size:18px;line-height:1.7;max-width:470px;margin:22px auto 30px;color:#f5eaff}
-.heart-logo{font-size:72px;animation:float 3s ease-in-out infinite}
-button{
-  border:0;border-radius:999px;padding:15px 30px;font-size:17px;font-weight:700;
-  color:#fff;background:linear-gradient(135deg,#9d68ca,#65328d);
-  box-shadow:0 10px 30px rgba(45,20,70,.3);cursor:pointer;
-  transition:.2s transform,.2s box-shadow;
-}
-button:hover{transform:translateY(-2px);box-shadow:0 14px 35px rgba(45,20,70,.4)}
-.hidden{display:none!important}
-.letter{padding:34px 24px 20px;line-height:1.85;font-size:17px}
-.letter h2{text-align:center;color:#633586;font-size:31px;margin:5px 0 20px}
-.letter p{margin:0 0 20px}
-.letter .highlight{
-  margin:28px 0;padding:22px;border-radius:18px;text-align:center;
-  background:linear-gradient(135deg,#f1e3ff,#fff2fb);border:1px solid #dfc7f0;
-  color:#61317d;font-size:22px;font-weight:700;
-}
-.closing{text-align:center;padding:10px 15px 38px;color:#6c4383}
-.bouquet{font-size:58px;letter-spacing:-8px;filter:drop-shadow(0 5px 8px rgba(75,30,100,.15))}
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;700&family=Great+Vibes&display=swap');
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;color:#392946;font-family:'DM Sans',sans-serif;background:radial-gradient(circle at 10% 10%,#ffd5ed 0,transparent 25%),radial-gradient(circle at 90% 15%,#c9b2ff 0,transparent 28%),linear-gradient(135deg,#24162f,#63417d 48%,#c287b5);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.13;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:20px 20px}
+.page{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:18px;position:relative}
+.card{width:min(820px,100%);overflow:hidden;border-radius:34px;background:#fffafd;box-shadow:0 30px 90px #160b22aa;border:1px solid #ffffff66}
+.cover{min-height:720px;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:50px 24px;color:#fff;background:radial-gradient(circle at 75% 20%,#e5a9dd55,transparent 25%),radial-gradient(circle at 15% 75%,#9c7be455,transparent 28%),linear-gradient(150deg,#21142e,#4b315f 50%,#9d6599)}
+.cover:after{content:"";position:absolute;width:430px;height:430px;right:-220px;bottom:-230px;border-radius:50%;background:#f2a9d933}
+.heart-logo{z-index:2;font-size:78px;color:#ffd8f4;text-shadow:0 0 28px #ffb6e899;animation:float 3s ease-in-out infinite}
+.cover h1{z-index:2;margin:5px 0 14px;font-family:'Great Vibes',cursive;font-size:clamp(70px,14vw,116px);font-weight:400;line-height:.82;color:#ffe1f6;text-shadow:0 7px 25px #1b092899}
+.cover .sub{z-index:2;max-width:540px;margin:12px auto 22px;font-family:'Cormorant Garamond',serif;font-size:25px;line-height:1.35;color:#fff7fc}
+.divider{z-index:2;display:flex;gap:14px;align-items:center;color:#ffd5ef;font-size:25px;margin:5px 0 25px}
+.divider:before,.divider:after{content:"";width:85px;height:1px;background:linear-gradient(90deg,transparent,#ffd5ef)}
+button{z-index:2;border:1px solid #ffffff88;border-radius:999px;padding:16px 34px;font-size:17px;font-weight:700;color:white;background:linear-gradient(135deg,#bd78bf,#7650b6);box-shadow:0 14px 35px #210c38aa,inset 0 1px #ffffff88;cursor:pointer;transition:.25s}
+button:hover{transform:translateY(-3px) scale(1.02)}
+.cover-bouquet{z-index:2;font-size:72px;margin-top:30px;filter:drop-shadow(0 9px 13px #16051e66)}
+.flower{position:absolute;z-index:1;font-size:70px;filter:drop-shadow(0 8px 12px #18062066);opacity:.92}
+.f1{left:5px;bottom:20px;transform:rotate(-12deg)}.f2{right:4px;top:38px;transform:rotate(12deg)}
+.petal{position:absolute;z-index:1;font-size:22px;opacity:.8;animation:drift 7s ease-in-out infinite}
+.p1{left:13%;top:17%}.p2{right:15%;top:33%;animation-delay:1s}.p3{left:18%;bottom:23%;animation-delay:2s}.p4{right:10%;bottom:17%;animation-delay:3s}.p5{left:7%;top:48%;animation-delay:4s}
+.letter{position:relative;padding:42px 34px 25px;line-height:1.9;font-size:17px;background:radial-gradient(circle at 8% 8%,#ddc0ff55,transparent 22%),radial-gradient(circle at 92% 88%,#ffc4df55,transparent 25%),#fffafd}
+.letter h2{text-align:center;color:#70419a;font-family:'Great Vibes',cursive;font-size:52px;font-weight:400;margin:0 0 22px}
+.letter p{margin:0 0 20px}.highlight{margin:30px 0;padding:24px;border-radius:22px;text-align:center;background:linear-gradient(135deg,#f3e4ff,#ffe9f6);border:1px solid #e1c5ed;color:#63367e;font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;box-shadow:0 8px 25px #5b327311}
+.closing{text-align:center;padding:10px 20px 42px;color:#6d4383;background:linear-gradient(#fffafd,#f1e5fa)}
+.bouquet{font-size:72px;letter-spacing:-8px}.closing h2{font-family:'Great Vibes',cursive;font-size:50px;font-weight:400;margin:0;color:#70419a}.closing p{font-family:'Cormorant Garamond',serif;font-size:22px}
+.footer{text-align:center;font-size:12px;color:#987ca8;padding:0 20px 25px;background:#f1e5fa}
 .floating-heart{position:fixed;pointer-events:none;animation:rise 6s linear forwards;z-index:10}
-.footer{text-align:center;font-size:13px;color:#9277a2;padding:0 20px 25px}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-@keyframes rise{0%{opacity:0;transform:translateY(20px) scale(.7) rotate(0)}15%{opacity:.8}100%{opacity:0;transform:translateY(-100vh) scale(1.2) rotate(25deg)}}
-@media(max-width:520px){
-  .page{padding:10px}.cover{min-height:610px;padding:35px 20px}
-  .cover h1{letter-spacing:4px}.letter{font-size:16px;padding:28px 19px 10px}
-}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-12px) rotate(3deg)}}
+@keyframes drift{0%,100%{transform:translate(0,0) rotate(0)}50%{transform:translate(15px,-22px) rotate(12deg)}}
+@keyframes rise{0%{opacity:0;transform:translateY(20px) scale(.7)}15%{opacity:.85}100%{opacity:0;transform:translateY(-100vh) scale(1.2) rotate(25deg)}}
+@media(max-width:560px){.page{padding:8px}.cover{min-height:680px;padding:42px 18px}.cover h1{font-size:78px}.cover .sub{font-size:21px}.divider:before,.divider:after{width:48px}.flower{font-size:52px}.letter{padding:34px 20px 18px;font-size:16px}.letter h2{font-size:46px}.highlight{font-size:24px}}
 </style>
 </head>
 <body>
-<div class="page">
-  <main class="card">
-    <section id="cover" class="cover">
-      <div class="heart-logo">♡</div>
-      <h1>UNSPOKEN<br>CONFESS</h1>
-      <p class="sub">There's something I've been wanting to tell you...<br>💜</p>
-      <button onclick="openLetter()">💌 Open Message</button>
-      <div style="margin-top:32px;font-size:42px">💐</div>
-    </section>
+<div class="page"><main class="card">
+<section id="cover" class="cover">
+<div class="flower f1">💐</div><div class="flower f2">💜🌸</div>
+<span class="petal p1">🌸</span><span class="petal p2">💜</span><span class="petal p3">🌷</span><span class="petal p4">💗</span><span class="petal p5">🌸</span>
+<div class="heart-logo">♡</div>
+<h1>Unspoken<br>Confess</h1>
+<p class="sub">There’s something I’ve been wanting to tell you…<br><em>something I’ve kept quietly in my heart.</em></p>
+<div class="divider">♡</div>
+<button onclick="openLetter()">💌 Open Message</button>
+<div class="cover-bouquet">💜💐🌷</div>
+</section>
 
-    <section id="letter" class="hidden">
-      <article class="letter">
-        <h2>For you 💜</h2>
-
-        <p>Hi! 😊</p>
-        <p>So thank you for being curious enough to open it. HAHAHA 😭😭</p>
-
-        <p>Actually, medyo nakakahiya talaga 'tong ginagawa ko, pero may gusto lang akong sabihin na matagal ko nang gustong sabihin.</p>
-
-        <p>Matagal na kitang napapansin, actually since Senior High School pa. Hindi ko rin in-expect na hanggang ngayon, crush pa rin kita. 😉</p>
-
-        <p>Same school pa rin tayo hanggang ngayon. Ako, graduating na, habang ikaw 2nd year college pa lang. Ang funny lang isipin na dati, nakikita lang kita from a distance, tapos ngayon pareho na tayong college students sa same school.</p>
-
-        <p>At least nagkaroon na rin tayo ng chance na mag-usap kahit isang beses, nung napulot ko yung school ID mo sa hallway. 😂 Honestly, simple lang naman yung conversation natin tungkol sa ID, pero para sa akin, memorable na rin siya kasi first time natin talagang nag-usap.</p>
-
-        <p>And yes napansin ko rin kung gaano ka katangkad 😭 HAHAHA. Ako kasi around 5'3 lang, tapos parang nasa 5'7 ka. Grabe yung height difference natin. Kapag magkatabi tayo, baka kailangan ko pang tumingala nang sobra para makausap ka. HAHAHA.</p>
-
-        <div class="highlight">I like you teh. ❤️</div>
-
-        <p>Hindi ko naman ine-expect na may maramdaman ka rin para sa akin. Alam ko rin na hindi naman tayo close, kaya ayokong ma-pressure ka na kailangan mong magbigay agad ng sagot.</p>
-
-        <p>Gusto ko lang maging honest kahit ngayon lang. Matagal ko na rin kasi 'tong gustong sabihin, pero wala lang talaga akong lakas ng loob.</p>
-
-        <p>If you're comfortable with it, I'd really like to get to know you more. Kahit simpleng usap lang muna. Kahit "Hi" kapag nagkita tayo sa school. No pressure, no expectations.</p>
-
-        <p>Kung hindi man same yung feelings mo, okay lang talaga. I will respect that, and I won't make things awkward.</p>
-
-        <p>At least ngayon, nasabi ko na yung matagal ko nang gustong sabihin. 😂</p>
-
-        <p>And before I end this, gusto ko rin sabihin na good luck sa studies mo! ❤️</p>
-
-        <p>I hope you continue doing your best sa college and ma-achieve mo lahat ng goals mo. Kapag napagod ka, okay lang magpahinga muna. Hindi naman kailangang laging strong. Basta kapag ready ka na ulit, tuloy lang.</p>
-
-        <p>I'm rooting for you, kahit from a distance. 😊</p>
-
-        <p>Since graduating na rin ako, naisip ko rin na baka hindi na tayo magkaroon ng maraming chances na magkita sa school. Kaya naisip ko na baka mas pagsisihan ko pa kung hindi ko man lang sinubukan.</p>
-
-        <p>Ayoko lang dumating yung time na mapapatanong ako sa sarili ko ng:</p>
-
-        <div class="highlight">"What if sinabi ko?"</div>
-
-        <p>So ayun...</p>
-        <p><strong>Sinabi ko na. 😭😭</strong></p>
-
-        <p>Whatever happens after this, I'm still glad na nagkaroon ako ng courage na sabihin sa'yo.</p>
-
-        <p>Hindi ko kailangan ng perfect na response. Kahit ano man yung maging sagot mo, I'll appreciate your honesty and respect your feelings.</p>
-
-        <p>So good luck sa'yo, future graduate. You got this! 🤞✨❤️</p>
-
-        <p>And maybe, someday...</p>
-
-        <div class="highlight">we can have another conversation that's not about returning a school ID.</div>
-
-        <p style="text-align:center;font-style:italic">— From someone who's been quietly crushing on you since Senior High School 😉</p>
-      </article>
-
-      <div class="closing">
-        <div class="bouquet">💜💐💜</div>
-        <h2>Thank you for reading. ❤️</h2>
-        <p>No pressure. Just honesty. 😊</p>
-      </div>
-      <div class="footer">Unspoken Confess · Made with courage 💜</div>
-    </section>
-  </main>
+<section id="letter" class="hidden">
+<article class="letter">
+<h2>For you 💜</h2>
+<p>Hi.</p>
+<p>Honestly, hindi ko alam kung paano ko sisimulan ‘to kasi medyo nakakahiya.</p>
+<p>Hindi naman tayo close, and to be honest, hindi rin tayo madalas mag-usap. Yung pinaka-tumatak lang na conversation natin was when I found your school ID sa hallway and gave it back to you. After that wala na. HAHAHA 😭😭</p>
+<p>Pero kahit ganun, may gusto lang talaga akong sabihin.</p>
+<p>Matagal na kitang crush.</p>
+<p>Since Senior High School pa. Hindi ko lang talaga alam kung paano ako lalapit sa’yo or magsisimula ng conversation, kaya hanggang tingin na lang ako most of the time. 😅</p>
+<p>Ngayon na graduating na ako, naisip ko na baka ito na yung chance ko para sabihin kahit isang beses lang.</p>
+<div class="highlight">I like you. ❤️</div>
+<p>Wala naman akong ine-expect na kapalit. Hindi rin kita pine-pressure na magustuhan ako or magbigay agad ng sagot. Gusto ko lang maging honest sa’yo, kasi matagal ko na rin itong tinatago.</p>
+<p>And honestly may isa pa akong gustong sabihin.</p>
+<div class="highlight">Sobrang tangkad mo teh 😭😭</div>
+<p>Ako nasa 5'3 lang, tapos ikaw around 5'7. Kaya kapag nakikita kita, parang automatic kailangan kong tumingala. HAHAHA</p>
+<p>Pero ayun lang talaga.</p>
+<p>Baka pagkatapos mong mabasa ‘to maging awkward tayo kapag nagkita tayo sa school. Pero sana hindi naman. I’ll still treat you the same, and whatever you think or feel about this, I’ll respect it.</p>
+<p>I just wanted you to know that there’s someone who has liked you for a really long time.</p>
+<p><strong>And before I graduate</strong></p>
+<div class="highlight">I finally got the courage to tell you. ❤️</div>
+<p>Lastly, good luck sa studies mo and sa lahat ng plans and goals mo. I hope you continue doing your best and achieve the things you’re working hard for. I’m quietly rooting for you, even from afar. 🫶</p>
+<p>Take care always, and thank you for taking the time to read this.</p>
+<p>Good luck, and I hope life treats you well. ❤️✨</p>
+</article>
+<div class="closing">
+<div class="bouquet">💜💐🌷💜</div>
+<h2>Thank you for reading. ❤️</h2>
+<p>No pressure. Just honesty. 😊</p>
 </div>
-
+<div class="footer">Unspoken Confess · Made with courage 💜</div>
+</section>
+</main></div>
 <script>
 function openLetter(){
-  document.getElementById('cover').classList.add('hidden');
-  document.getElementById('letter').classList.remove('hidden');
-  window.scrollTo({top:0,behavior:'smooth'});
-  for(let i=0;i<16;i++) setTimeout(createHeart,i*120);
+ document.getElementById('cover').classList.add('hidden');
+ document.getElementById('letter').classList.remove('hidden');
+ window.scrollTo({top:0,behavior:'smooth'});
+ for(let i=0;i<18;i++)setTimeout(createHeart,i*120);
 }
 function createHeart(){
-  const h=document.createElement('div');
-  h.className='floating-heart';
-  h.textContent=['💜','♡','♥','✨'][Math.floor(Math.random()*4)];
-  h.style.left=Math.random()*100+'vw';
-  h.style.bottom='-20px';
-  h.style.fontSize=(18+Math.random()*20)+'px';
-  h.style.animationDuration=(4+Math.random()*3)+'s';
-  document.body.appendChild(h);
-  setTimeout(()=>h.remove(),7000);
+ const h=document.createElement('div');h.className='floating-heart';
+ h.textContent=['💜','♡','♥','✨','🌸'][Math.floor(Math.random()*5)];
+ h.style.left=Math.random()*100+'vw';h.style.bottom='-20px';
+ h.style.fontSize=(18+Math.random()*20)+'px';
+ h.style.animationDuration=(4+Math.random()*3)+'s';
+ document.body.appendChild(h);setTimeout(()=>h.remove(),7000);
 }
 </script>
 </body>
