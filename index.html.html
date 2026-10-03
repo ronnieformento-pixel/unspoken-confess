@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unspoken Confess 💜</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: #3b2850;
+      background:
+        radial-gradient(circle at 20% 15%, rgba(255,255,255,.9), transparent 28%),
+        radial-gradient(circle at 85% 80%, rgba(214,190,236,.45), transparent 30%),
+        linear-gradient(135deg, #f4eafa 0%, #eadcf3 48%, #fff5ed 100%);
+      font-family: "DM Sans", system-ui, sans-serif;
+      overflow-x: hidden;
+    }
+    .petals { position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: 0; }
+    .petal { position: absolute; top: -40px; opacity: .65; animation: fall linear infinite; }
+    .petal:nth-child(1){left:8%;font-size:20px;animation-duration:10s;animation-delay:-2s}
+    .petal:nth-child(2){left:25%;font-size:15px;animation-duration:13s;animation-delay:-7s}
+    .petal:nth-child(3){left:46%;font-size:18px;animation-duration:11s;animation-delay:-4s}
+    .petal:nth-child(4){left:68%;font-size:16px;animation-duration:14s;animation-delay:-10s}
+    .petal:nth-child(5){left:88%;font-size:21px;animation-duration:12s;animation-delay:-6s}
+    @keyframes fall { to { transform: translate3d(80px, 110vh, 0) rotate(360deg); } }
+
+    .page { position: relative; z-index: 1; min-height: 100vh; padding: 28px 18px 60px; }
+    .panel {
+      width: min(760px, 100%);
+      margin: 0 auto;
+      text-align: center;
+    }
+    .cover {
+      min-height: calc(100vh - 88px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 28px 12px;
+    }
+    .bouquet { font-size: clamp(46px, 12vw, 78px); line-height: 1; margin-bottom: 16px; filter: drop-shadow(0 10px 16px rgba(83,48,110,.12)); }
+    .eyebrow { font-size: .78rem; letter-spacing: .18em; text-transform: uppercase; color: #86669c; margin: 0 0 10px; }
+    h1 { margin: 0; font-family: "Playfair Display", Georgia, serif; font-size: clamp(44px, 10vw, 76px); line-height: .95; color: #4c2866; }
+    .subtitle { max-width: 560px; margin: 24px auto 30px; font-size: clamp(16px, 3.8vw, 19px); line-height: 1.7; color: #694f78; }
+    .open-btn {
+      position: relative;
+      z-index: 10;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 190px;
+      min-height: 54px;
+      padding: 14px 24px;
+      border: 0;
+      border-radius: 999px;
+      background: #5d3677;
+      color: #fffaf7;
+      font: 600 16px/1 "DM Sans", sans-serif;
+      box-shadow: 0 12px 28px rgba(76,40,102,.22);
+      cursor: pointer;
+      pointer-events: auto;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .open-btn:hover { transform: translateY(-2px); box-shadow: 0 16px 32px rgba(76,40,102,.28); background: #4f2b66; }
+    .open-btn:active { transform: translateY(0); }
+
+    .message {
+      width: min(700px, 100%);
+      margin: 24px auto 0;
+      text-align: left;
+      animation: reveal .7s ease both;
+    }
+    @keyframes reveal { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+    .letter {
+      background: rgba(255,250,247,.88);
+      border: 1px solid rgba(113,72,137,.14);
+      border-radius: 28px;
+      padding: clamp(24px, 6vw, 46px);
+      box-shadow: 0 22px 70px rgba(75,45,94,.14);
+      backdrop-filter: blur(8px);
+    }
+    .letter-top { text-align: center; font-size: 30px; margin-bottom: 14px; }
+    .letter h2 { text-align: center; font-family: "Playfair Display", Georgia, serif; color: #542d6d; font-size: clamp(28px, 7vw, 40px); margin: 0 0 30px; }
+    .letter p { margin: 0 0 19px; font-size: clamp(16px, 3.8vw, 18px); line-height: 1.82; color: #4d3a58; }
+    .letter .big-love { text-align: center; font-family: "Playfair Display", Georgia, serif; font-size: clamp(28px, 7vw, 42px); color: #6a347f; margin: 28px 0; }
+    .closing { text-align: center; margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(113,72,137,.14); }
+    .closing p { margin-bottom: 8px; }
+    .footer { text-align: center; color: #806b8d; font-size: 14px; margin-top: 24px; }
+
+    .heart { position: fixed; z-index: 20; pointer-events: none; animation: floatUp 1.8s ease-out forwards; font-size: 20px; }
+    @keyframes floatUp { from { opacity: 1; transform: translateY(0) scale(.8); } to { opacity: 0; transform: translateY(-150px) scale(1.25); } }
+    .hidden { display: none !important; }
+
+    @media (max-width: 520px) {
+      .page { padding: 14px 12px 40px; }
+      .cover { min-height: calc(100vh - 54px); }
+      .letter { border-radius: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="petals" aria-hidden="true">
+    <span class="petal">🌸</span><span class="petal">💜</span><span class="petal">🌷</span><span class="petal">🌸</span><span class="petal">💗</span>
+  </div>
+
+  <main class="page">
+    <section id="cover" class="cover panel">
+      <div class="bouquet" aria-hidden="true">💐</div>
+      <p class="eyebrow">A little something I kept unspoken</p>
+      <h1>Unspoken<br>Confess</h1>
+      <p class="subtitle">There’s something I’ve been wanting to tell you…<br>something I’ve kept quietly in my heart.</p>
+      <button id="openBtn" class="open-btn" type="button">💌 Open Message</button>
+    </section>
+
+    <!-- Hidden on initial page load. It only appears after clicking Open Message. -->
+    <section id="message" class="message hidden" aria-hidden="true">
+      <article class="letter">
+        <div class="letter-top" aria-hidden="true">💜💐🌷</div>
+        <h2>For you 💜</h2>
+
+        <p>Hi.</p>
+        <p>Honestly, hindi ko alam kung paano ko sisimulan ‘to kasi medyo nakakahiya.</p>
+        <p>Hindi naman tayo close, and to be honest, hindi rin tayo madalas mag-usap. Yung pinaka-tumatak lang na conversation natin was when I found your school ID sa hallway and gave it back to you. After that wala na. HAHAHA 😭😭</p>
+        <p>Pero kahit ganun, may gusto lang talaga akong sabihin.</p>
+        <p>Matagal na kitang crush.</p>
+        <p>Since Senior High School pa. Hindi ko lang talaga alam kung paano ako lalapit sa’yo or magsisimula ng conversation, kaya hanggang tingin na lang ako most of the time. 😅</p>
+        <p>Ngayon na graduating na ako, naisip ko na baka ito na yung chance ko para sabihin kahit isang beses lang.</p>
+        <p class="big-love">I like you. ❤️</p>
+        <p>Wala naman akong ine-expect na kapalit. Hindi rin kita pine-pressure na magustuhan ako or magbigay agad ng sagot. Gusto ko lang maging honest sa’yo, kasi matagal ko na rin itong tinatago.</p>
+        <p>And honestly may isa pa akong gustong sabihin.</p>
+        <p>Sobrang tangkad mo teh 😭😭</p>
+        <p>Ako nasa 5'3 lang, tapos ikaw around 5'7. Kaya kapag nakikita kita, parang automatic kailangan kong tumingala. HAHAHA</p>
+        <p>Pero ayun lang talaga.</p>
+        <p>Baka pagkatapos mong mabasa ‘to maging awkward tayo kapag nagkita tayo sa school. Pero sana hindi naman. I’ll still treat you the same, and whatever you think or feel about this, I’ll respect it.</p>
+        <p>I just wanted you to know that there’s someone who has liked you for a really long time.</p>
+        <p>And before I graduate</p>
+        <p>I finally got the courage to tell you. ❤️</p>
+        <p>Lastly, good luck sa studies mo and sa lahat ng plans and goals mo. I hope you continue doing your best and achieve the things you’re working hard for. I’m quietly rooting for you, even from afar. 🫶</p>
+        <p>Take care always, and thank you for taking the time to read this.</p>
+        <p>Good luck, and I hope life treats you well. ❤️✨</p>
+
+        <div class="closing">
+          <div class="letter-top" aria-hidden="true">💜💐🌷💜</div>
+          <p>Thank you for reading. ❤️</p>
+          <p>No pressure. Just honesty. 😊</p>
+        </div>
+      </article>
+      <p class="footer">Unspoken Confess · Made with courage 💜</p>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      const openBtn = document.getElementById('openBtn');
+      const cover = document.getElementById('cover');
+      const message = document.getElementById('message');
+
+      if (!openBtn || !cover || !message) return;
+
+      openBtn.addEventListener('click', function () {
+        cover.classList.add('hidden');
+        message.classList.remove('hidden');
+        message.setAttribute('aria-hidden', 'false');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        // Small heart effect when the message opens.
+        for (let i = 0; i < 8; i++) {
+          const heart = document.createElement('span');
+          heart.className = 'heart';
+          heart.textContent = i % 2 === 0 ? '💜' : '♡';
+          heart.style.left = (42 + Math.random() * 16) + 'vw';
+          heart.style.top = (55 + Math.random() * 15) + 'vh';
+          heart.style.animationDelay = (i * 0.08) + 's';
+          document.body.appendChild(heart);
+          setTimeout(() => heart.remove(), 2100);
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
